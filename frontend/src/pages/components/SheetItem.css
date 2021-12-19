@@ -1,0 +1,24 @@
+.SheetItem {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    background-color: #d1f7ff;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.Name {
+    text-align: left;
+    font-size: small;
+}
+
+.Quote {
+    text-align: center;
+    font-size: medium;
+}
+
+.Time {
+    text-align: right;
+    font-size: x-small;
+}
