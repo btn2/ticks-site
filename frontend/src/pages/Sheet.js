@@ -1,5 +1,7 @@
 import { Component } from "react"
 import SheetItem from "./components/SheetItem";
+import config from "../config.json"
+import "./Sheet.css"
 export class Sheet extends Component {
     constructor() {
         super();
@@ -7,7 +9,7 @@ export class Sheet extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:5000/getquotes')
+        fetch(`${config.backendurl}/getquotes`)
         .then(res => res.json())
         .then(data => this.setState({ quotedata: data }))
     }
@@ -18,7 +20,10 @@ export class Sheet extends Component {
             items.push(<SheetItem key={i} data={this.state.quotedata[i]} />)
         }
         return(
-            <div>{items}</div>
+            <div>
+                <div className="header">monkopppeople shitbag wall</div>
+                {items}
+            </div>
         )
     }
 }

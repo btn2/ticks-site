@@ -2,10 +2,11 @@
     width: 600px;
     display: flex;
     flex-direction: column;
-    margin-top: 5px;
-    background-color: #d1f7ff;
-    padding: 5px 5px 5px 5px;
+    margin-top: 10px;
+    background-color: #36393f;
+    padding: 5px 10px 5px 10px;
     border-radius: 5px;
+    color: white;
 }
 
 .Name {

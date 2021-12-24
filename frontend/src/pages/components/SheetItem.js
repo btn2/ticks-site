@@ -6,7 +6,7 @@ function SheetItem(props) {
     return (
         <div className="SheetItem">
             <div className="Name">{props.data.nickname}</div>
-            <div className="Quote">"{props.data.quote}"</div>
+            <div className="Quote">{props.data.quote}</div>
             <div className="Time">{timestring}</div>
         </div>
     )
