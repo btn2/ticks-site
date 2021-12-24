@@ -14,7 +14,7 @@ const corsOptions = {
 app.get('/getquotes', async (req, res) => {
     try {
         db = await client.connect();
-        quotedata = await db.db("SyedBot").collection("quotes").find().toArray();
+        quotedata = await db.db("SyedBot").collection("quotes").find().sort({time: -1}).toArray();
         res.json(quotedata)
     } catch (e) {
         console.error(e);
