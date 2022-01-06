@@ -3,7 +3,8 @@
   display: grid;
   justify-content: center;
   justify-items: center;
-  grid-template-columns: 600px;
+  align-items: center;
+  grid-auto-columns: 1fr fit-content(85%);
 }
 
 .App-logo {
