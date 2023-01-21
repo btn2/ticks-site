@@ -24,11 +24,12 @@ export default function Home({ quotesData }) {
 	);
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
 	const quotesData = await getQuotes();
 	return {
 		props: {
 			quotesData,
 		},
+		revalidate: 10,
 	};
 }
