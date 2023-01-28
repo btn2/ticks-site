@@ -6,7 +6,7 @@ const { MongoClient } = require('mongodb');
 const PORT = 4000;
 const app = express();
 const client = new MongoClient(config.MongoURI);
-const db = await client.connect();
+let db;
 
 app.use(cors());
 const corsOptions = {
@@ -24,6 +24,7 @@ app.get('/getquotes', async (req, res) => {
     }
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
+    db = await client.connect();
     console.log("Server listening on port", PORT);
 })
