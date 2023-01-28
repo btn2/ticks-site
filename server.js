@@ -6,6 +6,7 @@ const { MongoClient } = require('mongodb');
 const PORT = 4000;
 const app = express();
 const client = new MongoClient(config.MongoURI);
+const db = await client.connect();
 
 app.use(cors());
 const corsOptions = {
@@ -13,13 +14,13 @@ const corsOptions = {
 };
 app.get('/getquotes', async (req, res) => {
     try {
-        db = await client.connect();
         quotedata = await db.db("SyedBot").collection("quotes").find().sort({time: -1}).toArray();
         res.json(quotedata)
     } catch (e) {
+        db.close()
+        db = await client.connect();
+        // make this better
         console.error(e);
-    } finally {
-        db.close();
     }
 })
 
